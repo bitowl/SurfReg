@@ -13,7 +13,7 @@ if(NOT "${PCL_LIBRARIES}" STREQUAL "")
   list(REMOVE_ITEM PCL_LIBRARIES "vtkproj4")
 endif()
 
-set(CMAKE_CXX_FLAGS "-O3 -msse2 -msse3")
+set(CMAKE_CXX_FLAGS "-O3 -msse2 -msse3 -lpthread -lboost_thread")
 
 add_executable (SurfReg SurfReg.cpp)
 target_link_libraries (SurfReg  ${Boost_LIBRARIES} ${PCL_LIBRARIES})
